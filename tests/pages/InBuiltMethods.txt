@@ -1,0 +1,62 @@
+📏 Geometry & Visibility
+
+boundingBox() → Returns {x, y, width, height} of the element.
+
+isVisible() → Returns true/false if element is visible.
+
+isHidden() → Returns true/false if element is hidden.
+
+isChecked() → Returns true/false if checkbox/radio is checked.
+
+isDisabled() → Returns true/false if element is disabled.
+
+isEditable() → Returns true/false if input/textarea is editable.
+
+isEnabled() → Returns true/false if element is enabled.
+
+🎨 Style & Attributes
+
+getAttribute(name) → Gets an attribute value (e.g., id, title).
+
+inputValue() → Gets value of an <input> or <textarea>.
+
+textContent() → Returns raw text (including hidden).
+
+innerText() → Returns visible text only (like user sees).
+
+innerHTML() → Returns inner HTML markup.
+
+evaluate(pageFunction) → Run custom JS on element, e.g. getComputedStyle.
+
+📌 Position & Interaction
+
+click() → Clicks element.
+
+hover() → Moves mouse over element (useful for tooltips).
+
+scrollIntoViewIfNeeded() → Scrolls element into viewport.
+
+screenshot() → Takes screenshot of the element.
+
+tap() → Taps element (mobile touch).
+
+🔍 Element Handling
+
+locator(selector) → Finds a child element.
+first() / last() / nth(i) → Get specific element from a list.
+count() → Get number of matching elements.
+allTextContents() → Get text content of all elements in a list.
+
+allInnerTexts() → Get visible inner texts of all elements.
+
+all() (new in Playwright 1.37+) → Returns all matching locators.
+
+🖼️ Special (Visual & State)
+
+screenshot() → Element screenshot.
+
+highlight() (debug mode) → Highlights the element.
+
+dragTo(targetLocator) → Drag-and-drop.
+
+selectOption(values) → Select dropdown option(s).

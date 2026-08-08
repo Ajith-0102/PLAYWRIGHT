@@ -1,0 +1,38 @@
+# This workflow uses npm install to ensure package-lock.json is in sync before running npm ci
+name: Node.js CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Use Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Install dependencies and update lock file
+      run: npm install
+
+    - name: Ensure Playwright binary is executable
+      run: chmod +x node_modules/.bin/playwright
+
+    - name: Install Playwright browsers
+      run: |
+        export PATH=$PATH:./node_modules/.bin
+        npx --no-install playwright install
+
+    - name: Clean install with npm ci
+      run: npm ci
+
+    - name: Run tests
+      run: npm test

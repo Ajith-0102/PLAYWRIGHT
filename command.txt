@@ -1,0 +1,54 @@
+# Install dependencies
+npm install
+
+# Run all BDD scenarios
+npm run Runner
+
+# Run scenarios with a specific tag (e.g., @login)
+npm run Runner -- --tags=@login
+
+# Run a specific scenario by name
+npm run Runner -- --name "User submits the input form successfully"
+
+# Run scenarios in parallel (e.g., 2 workers)
+npm run Runner -- --parallel=2
+
+# Generate Cucumber HTML report (after running tests)
+npm install --save-dev cucumber-html-reporter
+npm install -g allure-commandline --save-dev
+npm install --save-dev allure-cucumberjs
+npm install -g allure-commandline --save-dev
+
+npm install --save-dev @shelex/cucumberjs-allure2-reporter
+
+
+npm run cucumber:report
+npm run report:full
+
+✅ Run All Scenarios
+npm run Runner
+
+🏷️ Run Scenarios with Specific Tag
+npm run Runner:tag -- --tags @login
+
+🧾 Generate HTML Report from JSON
+npm run cucumber:report
+📦 Full Test Run with Report
+
+npm run report:full
+🏷️ Tag Run + Report Together
+npm run report:tag -- --tags @login
+
+
+# Open the generated Cucumber HTML report
+# (Open reports/cucumber-report.html in your browser)
+
+# Playwright HTML report (only for Playwright Test, not Cucumber)
+npx playwright show-report
+
+# Useful folders to know:
+# - tests/features/   : Feature files (Gherkin)
+# - tests/steps/      : Step definitions
+# - tests/pages/      : Page objects
+# - reports/          : Cucumber JSON & HTML reports
+# - playwright-report/: Playwright HTML report (if using Playwright

@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "outDir": "dist",
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "types": ["node", "@cucumber/cucumber", "playwright"],
+    "baseUrl": ".",
+    "paths": {
+      "@support/*": ["support/*"],
+      "@pages/*": ["tests/pages/*"],
+      "@features/*": ["tests/features/*"],
+      "@steps/*": ["tests/steps/*"]
+    }
+  },
+  "include": [
+    "support/**/*.ts",
+    "pages/**/*.ts",
+    "types/**/*.d.ts",
+    "tests/**/*.ts",
+    "playwright.config.ts",
+    "generate-cucumber-html-report.js"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules",
+    "**/*.spec.ts",
+    "**/*.test.ts"
+  ]
+}
