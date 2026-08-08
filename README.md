@@ -78,13 +78,17 @@ test('Validate infinite scroll loads all records', async ({ page }) => {
    ```
    npm install
    ```
+2. **Install playwright dependencies:**
+  ```
+  npx playwright install
+  ```
 
-2. **Run all tests:**
+3. **Run all tests:**
    ```
    npx playwright test
    ```
 
-3. **View test report:**
+4. **View test report:**
    ```
    npx playwright show-report
    ```
